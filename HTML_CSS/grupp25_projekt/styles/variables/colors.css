@@ -1,0 +1,22 @@
+@charset "UTF-8";
+:root {
+  --base-hue-1: 207;
+  --base-hue-2: 233;
+  --base-hue-3: 333;
+  --base-hue-4: 153;
+  --base-hue-5: 45;
+
+  --shift: 5;
+
+  --hue-1: calc(var(--base-hue-1) + var(--shift));    /*  BLUE  - INFORMATION   */
+  --hue-2: calc(var(--base-hue-2) + var(--shift));    /*  LILA  - KNOWLEDGE     */
+  --hue-3: calc(var(--base-hue-3) + var(--shift));    /*  RED   - DANGER        */
+  --hue-4: calc(var(--base-hue-4) + var(--shift));    /*  GREEN - SUCCESS       */
+  --hue-5: calc(var(--base-hue-5) + var(--shift));    /*  YELLOW - WARNING      */
+
+  --white-hue: var(--hue-1);
+  --white: hsl(var(--white-hue), 100%, 96%);
+
+  --black-hue: var(--hue-2);
+  --black: hsl(var(--black-hue), 12%, 17%);
+}

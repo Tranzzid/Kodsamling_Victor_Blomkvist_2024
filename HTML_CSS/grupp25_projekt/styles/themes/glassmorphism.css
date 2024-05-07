@@ -1,0 +1,13 @@
+.glass {
+  position: relative;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  box-shadow: inset 1px 1px 1px hsla(0, 0%, 100%, 0.667),
+    inset -1px -1px 1px hsla(var(--hue-1), 40%, 20%, 0.188),
+    5px 5px 10px hsla(var(--hue-1), 40%, 20%, 0.188);
+}
+
+.glass--circle {
+  border-radius: 50%;
+}

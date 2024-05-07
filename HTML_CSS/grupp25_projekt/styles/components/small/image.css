@@ -1,0 +1,64 @@
+:root {
+  --img-padding: 1.5rem;
+}
+
+.image {
+  position: relative;
+}
+
+.image--circle,
+.image--circle .image__container,
+.image--circle img,
+.image--circle .image__container::after {
+  border-radius: 50%;
+}
+
+.image--rotate {
+  transform: rotate(0deg);
+}
+
+.image--rotate:hover {
+  transform: rotate(360deg);
+}
+
+.image--glass {
+  background-color: hsla(0, 0%, 100%, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.image__container {
+  position: relative;
+}
+
+.image--glass .image__container {
+  padding: var(--img-padding);
+  box-shadow: inset 1px 1px 1px hsla(0, 0%, 100%, 0.667),
+    inset -1px -1px 1px hsla(var(--hue-1), 39%, 20%, 0.188),
+    5px 5px 10px hsla(var(--hue-1), 39%, 20%, 0.188);
+}
+
+.image--color .image__container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: var(--img-padding);
+  left: var(--img-padding);
+  z-index: 1000;
+  height: calc(100% - var(--img-padding) * 2);
+  width: calc(100% - var(--img-padding) * 2);
+  background-color: hsl(var(--hue-1), 20%, 40%);
+  mix-blend-mode: color;
+  opacity: 0.35;
+}
+
+.image img {
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  transition: all 500ms ease-in-out;
+}
+
+.image--rotate .image__container:hover:hover img {
+  transform: rotate(360deg);
+}

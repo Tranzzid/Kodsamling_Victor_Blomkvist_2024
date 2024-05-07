@@ -1,0 +1,53 @@
+@charset "UTF-8";
+.page-footer {
+  font-size: 2rem;
+  padding-top: 10em;
+  clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%);
+  background: hsl(var(--hue-3), 40%, 60%);
+  padding-bottom: 10rem;
+  margin-top: 10rem;
+}
+
+.page-footer h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: hsl(var(--hue-1), 40%, 20%);
+  margin-bottom: 0.25em;
+}
+
+.page-footer ul {
+  font-size: 0.8em;
+  padding-left: 1.1em;
+}
+
+.page-footer li {
+  position: relative;
+  padding-inline-start: 0.5ch;
+  margin-bottom: 0.5em;
+}
+
+.page-footer li::marker {
+  content: "\0025B7\200A";
+  font-size: 1em;
+  color: hsl(var(--hue-1), 40%, 20%);
+}
+
+.page-footer li:hover::marker {
+  content: "\0025BA";
+}
+
+.page-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-footer li a:hover {
+  color: hsl(var(--hue-1), 20%, 20%);
+  box-shadow: inset 0 -2px hsl(var(--hue-1), 40%, 20%);
+}
+
+@media only screen and (min-width: 480px) {
+  .page-footer li {
+    padding-inline-start: 1ch;
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>VAST - Members</title>
+  <meta name="description"
+    content="This text will quite often be displayed beneath the page name in the search results" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="./styles/variables/variables.css" />
+  <link rel="stylesheet" href="./styles/base/base.css" />
+  <link rel="stylesheet" href="./styles/grid/grid.css" />
+  <link rel="stylesheet" href="./styles/layout/layout.css" />
+  <link rel="stylesheet" href="./styles/components/large/container.css" />
+  <link rel="stylesheet" href="./styles/components/large/navbar.css" />
+  <link rel="stylesheet" href="./styles/components/large/modal.css" />
+  <link rel="stylesheet" href="./styles/components/large/form.css" />
+  <link rel="stylesheet" href="./styles/components/small/headline.css" />
+  <link rel="stylesheet" href="./styles/components/small/button.css" />
+  <link rel="stylesheet" href="./styles/components/small/social-media.css" />
+  <link rel="stylesheet" href="./styles/components/small/image.css" />
+  <link rel="stylesheet" href="./styles/components/small/thumbnail.css" />
+</head>
+
+<body>
+  <header class="page-header">
+    <h1 class="page-header__heading page-header__heading--danger">V<span>A</span>ST</h1>
+    <nav class="nav flex frow fbetween fmiddle">
+      <a class="nav__home nav__link nav__home--danger" href="./home.html">V<span>A</span>ST</a>
+      <a class="nav__hamburger" href="#">&#9776;</a>
+      <div class="nav__menu fcol-12 fcol-md-auto fgrow flex fcol frow-md fbetween-md">
+        <div class="nav__left flex fcol fcenter frow-md">
+          <a class="nav__link nav__link--current" href="./members.html">Members</a>
+        </div>
+        <div class="nav__right flex fcol fcenter frow-md">
+          <a class="nav__link" href="./account.html">Account</a>
+          <a class="nav__link" href="./sign_up.html">Sign up</a>
+          <a class="login nav__link" href="#">Log in</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="main main--margin">
+    <section class="container">
+      <h1 class="headline headline--danger">Gall<span>ery</span></h1>
+      <!--  grid grid--replica -->
+      <div class="gallery fpc fpc-col-12 fpc-col-xs-6 fpc-col-md-4 fpc-col-lg-3 fpc-col-xl-2">
+        <div class="thumbnail">
+          <header class="thumbnail__header">
+            <h4 class="thumbnail__title thumbnail__title--tertiary">Alexander Karlsson</h4>
+            <p class="thumbnail__text thumbnail__text--right"><a href="mailto:alk@du.se"
+                title="Mail Alexander Karlsson">alk@du.se</a>
+            </p>
+          </header>
+          <div class="thumbnail__image-container">
+            <img class="thumbnail__image" src="./img/members/0/0.jpg" width="512" height="512"
+              alt="Image of Alexander Karlsson" srcset="
+                ./img/members/0/0_256.webp 256w,
+                ./img/members/0/0_512.webp 512w,
+                ./img/members/0/0_1024.webp 1024w,
+                ./img/members/0/0_2048.webp 2048w" sizes="
+                (min-width: 1600px) calc((100vw - 26.6vw) / 6),
+                (min-width: 1200px) calc((100vw - 20vw) / 4),
+                (min-width: 992px) calc((100vw - 14vw) / 3),
+                (min-width: 768px) calc((100vw - 10vw) / 2), 
+                (min-width: 480px) calc((100vw - 30px) / 2), 
+                calc((100vw - 30px)" />
+            <a class="thumbnail__link" href="./account.html" title="Link to Alexander Karlssons profile">Go to
+              profile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!--   <script src="./js/headerBG.js"></script> -->
+  <script src="./js/members.js"></script>
+  <script src="./js/footer.js"></script>
+  <script src="./js/modal.js"></script>
+</body>
+
+</html>

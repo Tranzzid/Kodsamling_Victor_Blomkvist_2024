@@ -1,0 +1,36 @@
+html {
+  font-size: var(--remSize);
+  color: var(--black);
+}
+
+body {
+  font-family: var(--fontSans);
+  font-size: var(--fontStd);
+  background-color: var(--white);
+}
+
+:where(h1) {
+  font-weight: 800;
+  font-size: 6rem;
+}
+
+:where(h2, h3, h4, h5, h6) {
+  font-weight: 600;
+}
+
+:where(main) {
+  position: relative;
+}
+
+a {
+  color: hsl(var(--hue-4), 60%, 40%);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: hsl(var(--hue-3), 60%, 40%);
+}

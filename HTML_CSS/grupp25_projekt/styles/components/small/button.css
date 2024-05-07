@@ -1,0 +1,53 @@
+.btn {
+  display: block;
+  font-size: 0.9em;
+  background-color: hsl(var(--hue-1), 30%, 40%);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+}
+
+.btn--success:hover {
+  background-color: hsl(var(--hue-4), 40%, 60%);
+}
+.btn--success:active {
+  background-color: hsl(var(--hue-4), 60%, 60%);
+}
+.btn--danger:hover {
+  background-color: hsl(var(--hue-3), 40%, 60%);
+}
+.btn--danger:active {
+  background-color: hsl(var(--hue-3), 60%, 60%);
+}
+
+.btn--circle {
+  font-size: 3.5rem;
+  height: 6rem;
+  width: 6rem;
+  line-height: 1;
+  padding: 1.2rem;
+  border-radius: 50%;
+}
+
+.btn--blur {
+  color: hsl(var(--hue-1), 50%, 40%);
+  background-color: hsla(0, 0%, 100%, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 300ms ease-in-out;
+  box-shadow: inset 1px 1px 1px hsla(0, 0%, 100%, 0.667),
+    inset -1px -1px 1px hsla(var(--hue-1), 39%, 20%, 0.188),
+    5px 5px 10px #1f354730;
+}
+
+.btn--blur:hover {
+  color: hsl(var(--hue-4), 50%, 40%);
+  text-decoration: none;
+  text-shadow: 2px 2px 20px hsla(var(--hue-4), 70%, 60%, 0.5);
+  transform: scale(1.1);
+  box-shadow: inset 1px 1px 1px hsla(0, 0%, 100%, 0.667),
+    inset -1px -1px 1px hsla(var(--hue-1), 39%, 20%, 0.188),
+    7px 7px 15px #1f354720;
+}
