@@ -1,0 +1,47 @@
+'''minimal client - min_cli.py'''
+import json
+import requests
+
+JSON_REQUEST_HEADER = {'Content-type': 'application/json; charset=utf-8'}
+API_ENDPOINT = 'http://localhost:5000/api'
+
+if __name__=="__main__":
+    JSON = '{"cidr": "192.168.0.1/22", "addr_mask": "192.168.0.1/255.255.252.0"}'
+    response = requests.get(API_ENDPOINT, json=JSON, headers=JSON_REQUEST_HEADER)
+    #response = requests.post(API_ENDPOINT, json=jdata, headers=JSON_REQUEST_HEADER)
+    result = json.loads(response.content.decode('utf-8'))
+    for k, v in result.items():
+        print(f'{k}: {v}')
+
+
+'''minimal api - min_api.py'''
+import json
+import ipaddress
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/api', methods=['GET','POST'])
+def minmal_api():
+    ''''create dict object and return json string'''
+    if isinstance(request.get_json(), str):
+        jobj = json.loads(request.get_json())
+    else:
+        jobj = request.json
+    ipi = ipaddress.ip_interface(jobj.get('cidr'))
+    #ipi = ipaddress.ip_interface(jobj.get('addr_mask'))
+    result = {}
+    result["ipaddress"] = str(ipi.ip)
+    result["subnetmask"] = str(ipi.netmask)
+    result["wildcardmask"] = str(ipi.network.hostmask)
+    result["cidr"] = str(ipi.network).split('/')[1]
+    result["network"] = str(ipi.network).split('/', maxsplit=1)[0]
+    result["broadcast"] = str(ipi.network.broadcast_address)
+    result["firsthost"] = str(ipi.network[0]+1)
+    result["lasthost"] = str(ipi.network[-1]-1)
+    result["numusablehosts"] = str(ipi.network.num_addresses-2)
+    # Serialize result dict obj to a JSON formatted str
+    result_json = json.dumps(result)
+    return result_json
+
+app.run(host='0.0.0.0', port=5000, debug=True)
